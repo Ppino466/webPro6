@@ -1,5 +1,7 @@
 @extends('layouts.app', ['activePage' => 'Dashboard', 'titlePage' => __('Dashboard')])
 
+
+
 @section('content')
 <div class="content">
   <div class="container-fluid">
@@ -103,13 +105,12 @@
         <div class="card card-stats">
           <div class="card-header card-header-info card-header-icon">
             <div class="card-icon">
-              <a href="{{route('clientes')}}" role="button">
+              <a href="{{route('clientes.index')}}" role="button">
                 <img src="./material/img/icons/cliente.png" alt="MDN">
               </a>
             </div>
             <p class="card-category">Registros de Clientes</p>
-            <h3 class="card-title">5
-            </h3>
+            <h3 class="card-title">{{ $numeroClientes }}</h3>
           </div>
           <div class="card-footer">
             <div class="stats">

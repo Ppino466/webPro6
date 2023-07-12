@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,19 +34,18 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('tablas.sensores');
 	})->name('sensores');
 
-	Route::get('registroSensor', function () {
-		return view('forms.registroSensor');
-	})->name('registroSensor');
-
+	
 	Route::get('ventas', function () {
 		return view('tablas.ventas');
 	})->name('ventas');
 
-	Route::get('clientes',function(){
-		return view('tablas.clientes');
-	})->name('clientes');
+	// Route::get('clientes',function(){
+	// 	return view('tablas.clientes');
+	// })->name('clientes');
 
 });
+
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
@@ -54,3 +54,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+Route::resource('clientes', '\App\Http\Controllers\ClientController');
+
+Route::get('/obtener-json', function () {
+	$client = new Client([
+		'verify' => false,
+	]);
+	$response = $client->get('https://proyecto6prueba.000webhostapp.com/consultaProducto.php');
+	$data = json_decode($response->getBody(), true);
+	
+	return view('json-view')->with('data', $data);
+});

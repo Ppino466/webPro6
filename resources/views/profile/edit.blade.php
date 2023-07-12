@@ -10,9 +10,8 @@
             @method('put')
 
             <div class="card ">
-              <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Editar Perfil') }}</h4>
-                <p class="card-category">{{ __('Informacion Usuario') }}</p>
+              <div class="card-header card-header-info">
+                <h4 class="card-title">{{ __('Informacion Usuario') }}</h4>
               </div>
               <div class="card-body ">
                 @if (session('status'))
@@ -51,7 +50,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
+                <button type="submit" class="btn btn-info">{{ __('Guardar') }}</button>
               </div>
             </div>
           </form>
@@ -64,9 +63,8 @@
             @method('put')
 
             <div class="card ">
-              <div class="card-header card-header-primary">
+              <div class="card-header card-header-info">
                 <h4 class="card-title">{{ __('Cambiar Password') }}</h4>
-                <p class="card-category">{{ __('Password') }}</p>
               </div>
               <div class="card-body ">
                 @if (session('status_password'))
@@ -113,7 +111,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Cambiar password') }}</button>
+                <button type="submit" class="btn btn-info">{{ __('Cambiar password') }}</button>
               </div>
             </div>
           </form>

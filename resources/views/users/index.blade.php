@@ -172,17 +172,17 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="material-icons">person</i>
+        <a class="nav-link" href="#" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="material-icons">account_box</i>
           <p class="d-lg-none d-md-block">
             Account
           </p>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-          <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
+          <a class="dropdown-item" href="{{ route('profile.edit') }}">Perfil</a>
           <a class="dropdown-item" href="#">Settings</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log out</a>
+          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
         </div>
       </li>
     </ul>

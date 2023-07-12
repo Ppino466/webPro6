@@ -16,25 +16,25 @@
       </li>
       <li class="nav-item{{ $activePage == 'Registros' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('registros') }}">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">description</i>
           <p>{{ __('Registros') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'Sensores' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('sensores') }}">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">sensors</i>
           <p>{{ __('Sensores') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'Ventas' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('ventas') }}">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">point_of_sale</i>
           <p>{{ __('Ventas') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'Clientes' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('clientes') }}">
-          <i class="material-icons">content_paste</i>
+        <a class="nav-link" href="{{ route('clientes.index') }}">
+          <i class="material-icons">contact_page</i>
           <p>{{ __('Clientes') }}</p>
         </a>
       </li>
