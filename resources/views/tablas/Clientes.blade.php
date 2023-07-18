@@ -16,11 +16,10 @@
         <div class="card">
           <div class="card-header card-header-info">
             <h4 class="card-title ">Clientes</h4>
-
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table table class="table table-hover  shadow-lg" style="width:100%" id="Clientes">
+              <table  class="table table-hover  shadow-lg" style="width:100%" id="Clientes">
                 <thead class="card-header-info text-white">
                   <th>Id</th>
                   <th>Nombre</th>
@@ -39,8 +38,8 @@
                     <td>{{ $client['Email'] }}</td>
                     <td>{{ $client['Phone'] }}</td>
                     <td>
-                      <a href="#"><i class="material-icons" title="Editar" style="color:green;">edit</i></a>
-                      <a href="#"><i class="material-icons" title="Eliminar" style="color: red;">delete</i></a>
+                    <a href="#" role="button" class="btn btn-outline-success btn-sm"><i class="material-icons" title="Editar" style="color: green;">edit</i></a>
+                    <a href="#" role="button" class="btn btn-outline-danger btn-sm"><i class="material-icons" title="Eliminar" style="color: red;">delete</i></a>
                     </td>
 
                   </tr>

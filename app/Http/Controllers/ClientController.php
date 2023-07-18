@@ -27,7 +27,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('formularios.agregarCliente');
     }
 
     /**
@@ -38,7 +38,27 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        
+
+        $validateData = $this->validate($request, [
+            'telefono' => 'required|min:14',
+            'correo' => 'required',
+            'nombre' => 'required'
+        ]);
+
+        $client = new Client();
+        $client -> name = $request->input('nombre');
+        $client ->lastName = $request->input('apellidos');
+        $client ->Email = $request->input('correo');
+        $client ->Phone = $request->input('telefono');
+        $client->Status = 1; 
+        $client->created_at = date('Y-m-d H:i:s', strtotime('now'));
+        $client->save();
+        return redirect()->route('tablas.Clientes')->with(array( 'message' => 'El video se ha subido correctamente'
+    ));
+
+
     }
 
     /**
