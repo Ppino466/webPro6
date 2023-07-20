@@ -6,9 +6,51 @@
 
 
 @section('content')
+
 <div class="content">
+
+    <!-- Alert para mostrar mensaje de éxito -->
+    @if(session('cliente_guardado'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        ¡El cliente se ha guardado exitosamente!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+    @if(session('cliente_modificado'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        ¡El cliente se ha modificado exitosamente!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+    @if(session('cliente_eliminado'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        ¡El cliente se ha eliminado exitosamente!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+    <!-- Alert para mostrar mensaje de error -->
+    @if(session('cliente_error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        ¡Ups! Algo salió mal al guardar el cliente. Por favor, inténtalo nuevamente.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+
+
 <p align="right">
-            <a href="#" style="margin-right:10px;" class="btn btn-success" title="Registar">Registar Cliente</a>
+            <a href="{{ route('clientes.create') }}" style="margin-right:10px;" class="btn btn-success" title="Registar">Registar Cliente</a>
         </p>
   <div class="container-fluid">
     <div class="row">
@@ -38,8 +80,8 @@
                     <td>{{ $client['Email'] }}</td>
                     <td>{{ $client['Phone'] }}</td>
                     <td>
-                    <a href="#" role="button" class="btn btn-outline-success btn-sm"><i class="material-icons" title="Editar" style="color: green;">edit</i></a>
-                    <a href="#" role="button" class="btn btn-outline-danger btn-sm"><i class="material-icons" title="Eliminar" style="color: red;">delete</i></a>
+                    <a href="{{ route('clientes.edit', ['cliente' => $client['id']]) }}" role="button" class="btn btn-outline-success btn-sm"><i class="material-icons" title="Editar" style="color: green;">edit</i></a>
+                    <a href="{{ route('clientes.delete', ['cliente' => $client['id']]) }}" role="button" class="btn btn-outline-danger btn-sm"><i class="material-icons" title="Eliminar" style="color: red;">delete</i></a>
                     </td>
 
                   </tr>

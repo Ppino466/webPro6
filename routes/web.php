@@ -56,6 +56,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::resource('clientes', '\App\Http\Controllers\ClientController');
 
+Route::get('/clientes/{cliente}/edit', '\App\Http\Controllers\ClientController@edit')->name('clientes.edit');
+
+Route::get('/clientes/{cliente}/delete', '\App\Http\Controllers\ClientController@delete')->name('clientes.delete');
+
+
 Route::get('/obtener-json', function () {
 	$client = new Client([
 		'verify' => false,

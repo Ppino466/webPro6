@@ -1,7 +1,7 @@
 
 <div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
  <div class="logo">
-    <img src="./material/img/logo.jpg" width="250" height="200">
+    <img src="/../material/img/logo.jpg" width="250" height="200">
     <a href="#" class="simple-text logo-normal">
       {{auth()->user()->name}}
     </a>
